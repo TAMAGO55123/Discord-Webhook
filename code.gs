@@ -1,14 +1,17 @@
 function sendDiscordMessage() {
-  const webhookUrl = "YOUR_DISCORD_WEBHOOK_URL"; // Webhook URL を設定
+  const webhookUrl = PropertiesService.getScriptProperties().getProperty('DISCORD_WEBHOOK'); // 設定->スクリプト プロパティから指定。
 
   const payload = {
-    content: "定期的なメッセージを送信します！", // 送信したいメッセージ
+    "content": `定期的なメッセージを送信します！`, // 送信したいメッセージ、``を使用しているため改行可能
+    "username": PropertiesService.getScriptProperties().getProperty('username'), // 設定->スクリプト　プロパティから指定。ユーザー名
+    "avatar_url": PropertiesService.getScriptProperties().getProperty('avatar'), // 設定->スクリプト　プロパティから指定。アバターURL
   };
 
   const options = {
-    method: "post",
-    contentType: "application/json",
-    payload: JSON.stringify(payload),
+    "method": "post",
+    "headers": {"Content-Type": "application/json"},
+    "payload": JSON.stringify(payload),
+    "muteHttpExceptions": true
   };
 
   try {
