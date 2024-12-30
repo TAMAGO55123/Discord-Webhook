@@ -24,4 +24,4 @@ ChatGPTを使用し、Google Apps Scriptで作成した定期送信コードで�
 
 Twitter: https://x.com/imodir_abias (鍵垢のため当スクリプトの報告等する際はDM機能を使用することをお勧めします。)
 
-Discord: Burnice_1 ←こちらにメッセージの送信をお願いします。
+Discord: burnc_1 ←こちらにメッセージの送信をお願いします。
